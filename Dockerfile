@@ -3,7 +3,7 @@ LABEL CREATEDBY "Matthew Stobbs <matthew.stobbs@ucalgary.ca>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG CANDIG_REPO=https://github.com/CanDIG/CanDIGv2.git
-ARG BRANCH=stable
+ARG BRANCH=develop
 ARG YQBINARY=yq_linux_amd64
 ARG YQVERSION=v4.44.1
 
@@ -34,4 +34,7 @@ RUN curl -L https://github.com/mikefarah/yq/releases/download/${YQVERSION}/${YQB
 RUN git clone -b ${BRANCH} --recurse-submodules ${CANDIG_REPO} /candig
 
 WORKDIR /candig
-ENTRYPOINT ["make", "install-all"]
+
+COPY ./install-all.sh /candig/install-all.sh
+
+ENTRYPOINT ["bash", "install-all.sh"]
