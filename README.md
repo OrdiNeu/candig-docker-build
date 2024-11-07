@@ -12,7 +12,7 @@
 
 ## Instructions
 
-*Replace podman witch docker if using docker*
+*Replace podman with docker if using docker*
 
 1. Build the container: `podman build -t candig-build:latest -f Dockerfile .`
 2. Run the built container on the machine you want to deploy candig to: `podman run -it -v /var/run/podman/podman.sock:/var/run/docker.sock:ro,z -v /path/to/environment:/candig/.env:ro -v /candig/tmp:/candig/tmp candig-build:latest`
