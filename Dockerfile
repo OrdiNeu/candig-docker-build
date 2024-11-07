@@ -3,7 +3,7 @@ LABEL CREATEDBY "Matthew Stobbs <matthew.stobbs@ucalgary.ca>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG CANDIG_REPO=https://github.com/CanDIG/CanDIGv2.git
-ARG BRANCH=develop
+ARG BRANCH=stable
 ARG YQBINARY=yq_linux_amd64
 ARG YQVERSION=v4.44.1
 
